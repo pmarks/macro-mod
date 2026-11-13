@@ -1,0 +1,16 @@
+[package]
+name = "macro_host_cascade"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = []
+## A documented feature, so document_features! has something to list.
+extra = []
+
+[dependencies]
+document-features = "0.2"
+# Never used below; only linked in. Under Relax its own macro_rules fail (see ../macro-sep).
+indexed_db_futures_macros_internal = "=1.0.0"
+
+[workspace]
