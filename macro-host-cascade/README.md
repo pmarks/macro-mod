@@ -17,7 +17,7 @@ relax: 1 crate did not load (the load errors above), so the run stops before `ma
 ```
 
 A macro crate that fails to load should break only that crate's own macros.
-In a real app (QPlot), this one unused crate stopped wgpu_core, wgpu,
+In a larger app that depends on wgpu and eframe, this one unused crate stopped wgpu_core, wgpu,
 egui_wgpu, eframe and poll_promise from loading, and broke every zerocopy and
 thiserror derive, so the run stopped before `main`.
 

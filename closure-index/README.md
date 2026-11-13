@@ -13,7 +13,3 @@ src/main.rs:8:26: E0308: mismatched types: expected `usize`, found `Range<usize>
 parameter's type open until the call fixes it. Relax settles on `usize` (the
 `Index` impl that returns one element) while checking the body, and then
 rejects the call.
-
-Real-world case: QPlot's `build_info.rs`, where
-`let field = |range, unstamped| std::str::from_utf8(&stamp[range])…` is called
-with `const VERSION: Range<usize>`.
