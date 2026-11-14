@@ -1,0 +1,9 @@
+[package]
+name = "boxed_async_chain"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+pollster = "0.4"
+
+[workspace]
