@@ -20,5 +20,5 @@ Relax was built with `cargo build --release -p relax-runner --bin relax`.
 | [`boxed-async-chain`](boxed-async-chain) | `boxed_async_chain` | The same, three fns deep, where only code needs the size: passes today; a guard for a fix | passes on `193e0b6c` |
 | [`boxed-async-chain-temp`](boxed-async-chain-temp) | `boxed_async_chain_temp` | A temporary dead before an await stays in the frame: a size cycle rustc does not have | fixed on `193e0b6c` |
 | [`deny-unsafe-derive`](deny-unsafe-derive) | `deny_unsafe_derive` | `deny(unsafe_code)` fires on the `unsafe impl` that bytemuck's derive writes (`relax test`) | open on `193e0b6c` |
-| [`format-alloc-shadow`](format-alloc-shadow) | `format_alloc_shadow` | `format!` in a `proptest!` test with a local module `alloc` in scope: "macro `format!` is not supported yet" (`relax test`) | open on `193e0b6c` |
+| [`format-alloc-shadow`](format-alloc-shadow) | `format_alloc_shadow` | A block-local `extern crate alloc;` doesn't shadow an imported `alloc` module for macro paths: "macro `format!` is not supported yet" (proptest's `prop_assert!`) | open on `c9f9d129e` |
 | [`faer-as-ref`](faer-as-ref) | `faer_as_ref` | faer 0.24.4 `Mat::as_ref`: internal compiler error "non-concrete region in LUB" | open on `193e0b6c` |
